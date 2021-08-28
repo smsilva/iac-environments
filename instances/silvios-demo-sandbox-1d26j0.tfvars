@@ -1,0 +1,6 @@
+stack_name            = "iac-demo-foundation"
+stack_version         = "1.0.0"
+environment_name      = "silvios-demo-sandbox-1d26j0"
+region                = "centralus"
+azure_subscription_id = "ddc30188-075a-470d-a6ca-05a1987c51a3"
+newrelic_account_id   = "2879336"

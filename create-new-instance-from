@@ -1,0 +1,27 @@
+#!/bin/bash
+TFVAR_FILE="$1"
+
+if [ -z "${TFVAR_FILE}" ]; then
+  echo "You should inform a Terraform tfvar file name as a parameter:"
+  echo ""
+  echo "  ./create-new-instance-from \${PWD}/variables/silvios-demo-sandbox-centralus.tfvars"
+  echo "  ./create-new-instance-from \${PWD}/variables/silvios-demo-sandbox-eastus2.tfvars"
+  echo ""
+
+  exit 1
+fi
+
+if [ ! -e "${TFVAR_FILE}" ]; then
+  echo "File ${TFVAR_FILE} not found."
+  exit 1
+fi
+
+if [ ! -e "src/.terraform/terraform.tfstate" ]; then
+  terraform -chdir=src init
+fi
+
+terraform -chdir=src apply \
+  -auto-approve \
+  -state-out=/dev/null/state \
+  -lock=false \
+  -var-file="${TFVAR_FILE?}"

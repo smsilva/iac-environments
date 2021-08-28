@@ -1,0 +1,6 @@
+stack_name            = "iac-environments"
+stack_version         = "1.0.0"
+environment_name      = "default"
+region                = "centralus"
+azure_subscription_id = "ddc30188-075a-470d-a6ca-05a1987c51a3"
+newrelic_account_id   = "2879336"

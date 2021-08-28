@@ -1,0 +1,6 @@
+stack_name            = "${stack_name}"
+stack_version         = "${stack_version}"
+environment_name      = "${environment_name}"
+region                = "${region}"
+azure_subscription_id = "${azure_subscription_id}"
+newrelic_account_id   = "${newrelic_account_id}"
