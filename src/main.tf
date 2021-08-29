@@ -18,12 +18,12 @@ data "template_file" "backend" {
   template = file("${path.module}/templates/instance.tfvars.tpl")
 
   vars = {
-    stack_name            = var.stack_name
-    stack_version         = var.stack_version
-    azure_subscription_id = var.azure_subscription_id
     environment_name      = local.environment_name
+    azure_subscription_id = var.azure_subscription_id
     region                = var.region
     newrelic_account_id   = var.newrelic_account_id
+    stack_name            = var.stack_name
+    stack_version         = var.stack_version
   }
 }
 
